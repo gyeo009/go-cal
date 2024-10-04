@@ -21,7 +21,6 @@ func MeasureExecutionTime(f func(string) int, postfix string) int {
 	// fmt.Print(r, "\n")
 
 	// 종료 후 경과 시간 계산
-	elapsed2 := time.Since(start).Milliseconds()
 	end_goroutines := runtime.NumGoroutine() // 종료 시점의 Goroutine 수
 	numCPU := runtime.NumCPU()               // CPU 수
 	numThreads := runtime.GOMAXPROCS(0)      // 사용 중인 최대 스레드 수
@@ -34,7 +33,6 @@ func MeasureExecutionTime(f func(string) int, postfix string) int {
 	}
 	// 결과 출력
 	fmt.Printf("Execution time: %d ms\n", elapsed)
-	fmt.Printf("Execution time2: %d ms\n", elapsed2)
 
 	fmt.Printf("Start Goroutines: %d, End Goroutines: %d\n", start_goroutines, end_goroutines)
 	fmt.Printf("Available CPUs: %d, Max Threads (GOMAXPROCS): %d\n", numCPU, numThreads)
