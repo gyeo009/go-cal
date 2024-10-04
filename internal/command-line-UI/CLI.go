@@ -2,6 +2,7 @@ package commandLineUI
 
 import (
 	"fmt"
+	operation "go-cal/internal/operation"
 	"time"
 )
 
@@ -9,9 +10,10 @@ var option_string string = "====================================================
 	`
 	1. 사칙연산(정수)
 	2. 사칙연산(소수점이 있는 정수)
-	3. 이전 기록 불러오기
-	4. 만든 사람
-	5. 종료...
+	3. 연산식 파일 불러와 실행하기(정수)
+	4. 이전 기록 불러오기
+	5. 만든 사람
+	6. 종료...
 ` + "\n===============================================================================================================\n"
 
 var about string = `
@@ -30,6 +32,12 @@ Go에 대해서는 아직 많이 배우고 있지만, 학부 과정을 통해 �
 이 프로젝트는 제 학습 여정을 반영하며, 개발자로서 성장하고자 하는 저의 의지를 보여줍니다.
 `
 
+var operation_UI = ` 정수 값들의 사칙연산을 할 수 있습니다.
+  +, -, *, / 및 ( ) 기호까지만 사용하실 수 있습니다.
+
+  정수와 연산자로 이뤄진 식을 입력해주세요... : 
+`
+
 func CommandLineInterface() {
 	// ASCII Art 출력
 	fmt.Println(PrintAsciiArt() + "\n\n")
@@ -45,20 +53,24 @@ func CommandLineInterface() {
 
 		switch input {
 		case "1": // 사칙연산(정수)
-			func() {
-
-			}()
+			fmt.Println(operation_UI)
+			fmt.Scanln(&input)
+			operation.OperateArithmetic(input)
 		case "2": // 사칙연산(소수점이 있는 정수)
 			func() {
 
 			}()
-		case "3": // 사칙연산(이전 기록 불러오기), UTC 표준 시간도 기록하자
+		case "3": // 연산식 파일 불러와 실행하기(정수)
 			func() {
 
 			}()
-		case "4": // 만든 사람
+		case "4": // 사칙연산(이전 기록 불러오기), UTC 표준 시간도 기록하자
+			func() {
+
+			}()
+		case "5": // 만든 사람
 			fmt.Println(about)
-		case "5":
+		case "6":
 			fmt.Println("이용해주셔서 감사합니다.")
 			return
 		default:
