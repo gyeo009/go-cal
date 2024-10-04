@@ -10,7 +10,7 @@ import (
 
 func OperateArithmetic(input string) {
 	// 1. 후위 표기식으로 변환
-	postfix := MeasureExecutionTimeString(conversion, input)
+	postfix := MeasureExecutionTimeString(Conversion, input)
 	fmt.Printf("변환 완료, 결과값 : %v\n", postfix)
 	// 1-1. 속도 테스트
 

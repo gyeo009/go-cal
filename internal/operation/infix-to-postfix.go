@@ -15,7 +15,7 @@ import (
 	"strings"
 )
 
-func conversion(input string) string {
+func Conversion(input string) string {
 	var result strings.Builder
 	stack := []byte{}
 
