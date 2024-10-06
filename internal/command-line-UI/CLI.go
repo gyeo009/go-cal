@@ -2,7 +2,9 @@ package commandLineUI
 
 import (
 	"fmt"
-	operation "go-cal/internal/operation"
+	"go-cal/internal/evaluator"
+	"go-cal/internal/utils"
+
 	"time"
 )
 
@@ -55,7 +57,8 @@ func CommandLineInterface() {
 		case "1": // 사칙연산(정수)
 			fmt.Println(operation_UI)
 			fmt.Scanln(&input)
-			operation.OperateArithmetic(input)
+			input = utils.AddSpacesBetweenOperators(input)
+			evaluator.EvaluateExpression(input)
 		case "2": // 사칙연산(소수점이 있는 정수)
 			func() {
 
