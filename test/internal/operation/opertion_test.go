@@ -19,7 +19,7 @@ func TestConversion(t *testing.T) {
 func BenchmarkConversion(b *testing.B) {
 	benchmarkExpression := "1+14-3*(4-2/5)*7+8"
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+	for range b.N {
 		operation.Conversion(benchmarkExpression)
 	}
 
